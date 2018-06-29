@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# THIS FILE HAS TO BE RUN FIRSTLY
+# THIS IS THE FIRST PART OF THE PROGRAM
 
 # install the program xinput puting automatically yes for installing and without showing it installs
 sudo apt-get --yes --force-yes install xinput >> /dev/null
