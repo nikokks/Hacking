@@ -31,9 +31,5 @@ chmod 777 clean
 Then run the program "clean" by doing:
 ./clean
 
-You have to kill manually the process "xinput" for example by doing:
-ps
-kill 78912
-
 
 ######################################################################
