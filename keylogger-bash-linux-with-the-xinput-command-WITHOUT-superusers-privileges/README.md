@@ -7,10 +7,8 @@ This is just a simple bash script that convert alphabetic keystrokes of xinput c
 
 ################### HOW TO LAUNCH THE PROGRAM #######################
 
-You have to be in superuser by doing on a terminal:
-sudo -s 
 
-Then you have to put prog in 777 by doing: 
+You have to put prog in 777 by doing: 
 chmod 777 prog
 
 Finally run the file prog with uperusers privileges by doing:
@@ -23,8 +21,6 @@ The file will be  TRADUCTION where will be in the repository /home/recordings/
 
 #################### HOW TO CLEAN THE COMPUTER ######################
 
-You have to be in superuser by doing:
-sudo-s
 
 You have to put in 777 the file "clean" by doing:
 chmod 777 clean
