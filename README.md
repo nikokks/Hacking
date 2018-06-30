@@ -4,7 +4,7 @@ This repository contains a work about a keylogger made home thanks to the xinput
 
 This is just a simple bash script that convert alphabetic keystrokes of xinput command into the file TRADUCTION. 
 
-##################################################################### \n
+
 ################### HOW TO LAUNCH THE PROGRAM #######################
 
 You have to be in superuser by doing on a terminal:
@@ -18,8 +18,6 @@ Finally run the file prog with uperusers privileges by doing:
 
 #####################################################################
 
-
-#####################################################################
 #################### HOW TO CLEAN THE COMPUTER ######################
 
 You have to be in superuser by doing:
