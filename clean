@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # delete the cron table
-sudo contrab -r
+sudo crontab -r >> /dev/null
+
+# kill all process of xinput in background
+sudo pkill xinput >> /dev/null
 
 # delete the repositories and the files used for the process
 sudo rm -rf /home/recordings >> /dev/null
