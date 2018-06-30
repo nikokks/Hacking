@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# delete the cron table
+crontab -r >> /dev/null
+
+# kill all process of xinput in background
+pkill xinput >> /dev/null
+
+# delete the repositories and the files used for the process
+rm -rf ~/recordings2 >> /dev/null
+
