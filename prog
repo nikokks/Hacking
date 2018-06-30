@@ -23,7 +23,7 @@ if [ ! -d "/home/recordings" ]; then
 fi
 
 #we change our current directory
-cd $HOME/recordings
+cd /home/recordings
 
 # we create 3 files 
 touch root
