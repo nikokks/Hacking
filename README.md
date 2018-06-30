@@ -16,6 +16,9 @@ chmod 777 prog
 Finally run the file prog with uperusers privileges by doing:
 ./prog
 
+type something to try and wait a minute to let the time to run the program table3
+The file will be  TRADUCTION where will be in the repository /home/recordings/
+
 #####################################################################
 
 #################### HOW TO CLEAN THE COMPUTER ######################
