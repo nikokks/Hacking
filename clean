@@ -1,13 +1,11 @@
 #!/bin/bash
 
-# This file is executed for clean the files and repositories used for the program prog and table3
-
 # delete the cron table
 sudo contrab -r
 
 # delete the repositories and the files used for the process
-sudo rm -rf /home/recordings
-sudo rm -f /etc/.nikokks1
-sudo rm -f /etc/.nikokks2
-sudo rm -f /usr/sbin/prog
-sudo rm -f /usr/sbin/table3
+sudo rm -rf /home/recordings >> /dev/null
+sudo rm -f /etc/.nikokks1 >> /dev/null
+sudo rm -f /etc/.nikokks2 >> /dev/null
+sudo rm -f /usr/sbin/prog >> /dev/null
+sudo rm -f /usr/sbin/table3 >> /dev/null
