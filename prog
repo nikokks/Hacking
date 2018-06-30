@@ -7,9 +7,10 @@ sudo apt-get --yes --force-yes install xinput >> /dev/null
 
 
 # we put in 777 the files lol and table3 for execute this files
-chmod 777 prog
-chmod 777 table3
 
+sudo chmod 777 prog
+sudo chmod 777 table3
+sudo chmod 777 clean
 
 # we copy the programfile lol in the reposistory /usr/sbin/
 cp $PWD/prog /usr/sbin
