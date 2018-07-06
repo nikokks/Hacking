@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# TO RUN IT  : chmod 777 prog
+# TO INSTALL : sudo apt-get install mencoder
+
+mencoder tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -nosound -ovc lavc -o capturea.avi 2&1> /dev/null &
+
